@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}{{post_detail.post_title}}{% endblock %}
+
+{% block blogcontents %}
+
+	<div class="card mt-5">	
+		<div class="card-body">
+			<h1 class="title mt-2">{{ post_detail.post_title }}</h1>
+			<p class="user-detail mt-4"><i class="fas fa-user-astronaut mr-2"></i>{{ post_detail.post_auther }} | {{ post_detail.post_date|date }}</p> <br>
+
+			<img class="ml-4" src="{{ post_detail.post_image }}" height="auto" width="80%">
+			<p class="mt-4">{{ post_detail.post_content|safe|linebreaks }}</p>
+		</div>
+	</div>
+
+{% endblock %}
+
+
+{% block sidebar %}
+		{% if side_view %}
+			<div class="list-group border border-white mt-5 ml-2">
+				<input type="button" class="list-group-item button-effect" value="Recent posts">
+				{% for views in side_view %}
+					<a class="nav-link" href="{% url 'blog:detail' slug=views.slug %}">  
+					   <button type="button" class="list-group-item list-group-item-action"><img class="rounded-circle" src="{{ views.post_image.url }}" height="50px" width="50px"><p class="ml-1"><b>{{ views.post_title }}</b></p></button>
+					</a>
+				{% endfor %}				
+			</div>
+
+		{% endif %}
+
+
+{% endblock %}

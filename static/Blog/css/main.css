@@ -1,0 +1,111 @@
+.navbar-brand{
+	font-size: 30px;
+}
+
+
+.paginate{
+	background-color: #900C3F;
+	color:white;
+}
+.paginate:hover{
+	background-color: #34495E;
+	color:white;
+}
+
+
+
+.bg{
+	background-color: #EBEDEF;
+}
+
+.navbar{
+	min-height: 80px;
+}
+
+.mynav{
+	background-color: #34495E;
+}
+
+.text-white{
+	transition:0.5s;
+	font-size: 20px;
+	border-bottom: 4px solid red;
+
+}
+.text-white:hover{
+	transition: 0.5s;
+	background-color: #900C3F;
+}
+
+.fab{
+	transition:0.6s;
+	border-bottom: 2px solid red;
+	
+}
+
+.fab:hover{
+	border-radius: 50%;
+	border-color: blue;
+	border-top:1px solid;
+	transition:0.6s;
+	border-bottom: 6px solid;
+}
+
+.social-icons{
+	margin: 0 20px;
+}
+
+.social-icons .fab{
+	padding: 10px;
+	font-size: 20px;
+}
+
+
+.title{
+	color:#55346B;
+	font-family: 'Acme', sans-serif;
+
+}
+
+.user-detail{
+	font-family: 'Amaranth', sans-serif;
+
+}
+
+.readmore{
+	border-radius: 30%;
+	background-color: #34495E;
+}
+
+.footerline{
+	text-align: center;
+}
+
+.text{
+	color:white;
+}
+
+.button-effect{
+	font-size: 30px;
+	background-color: #34495E;
+	color:white;
+	border-bottom: 4px solid red;
+
+}
+.button-effect:hover{
+	background-color: #34495E; 
+	border-bottom: 4px solid red;
+	color:white;
+}
+.disabled{
+	background-color: #34495E;
+}
+.fas{
+	background-color: white;
+}
+
+.border{
+	background-color: #34495E;
+}
+
+

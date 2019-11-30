@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Real Life Blog{% endblock %}
+
+
+
+{% block blogcontents %}
+
+	{% if post_entries %}
+		{% for posts in post_entries %}
+			<div class="card mt-5">	
+				<div class="card-body">
+					<h1 class="title mt-2">{{ posts.post_title }}</h1>
+					<p class="user-detail mt-4"><i class="fas fa-user-astronaut mr-2"></i>{{ posts.post_auther }} | {{ posts.post_date|date }}</p> <br>
+
+					<img class="ml-4" src="{{ posts.post_image }}" height="auto" width="80%">
+					<p class="mt-4">{{ posts.post_content|safe|truncatechars:150 }}</p>
+
+					<a href="{% url 'blog:detail' slug=posts.slug %}"><input type="submit" value="Read more" class="btn btn-primary readmore mt-2"></a>
+				</div>
+			</div>
+		{% endfor %}
+	{% endif %}
+
+
+	{% if is_paginated %}
+<!-- Pagination -->
+    	<ul class=" pagination justify-content-center mb-4 mt-5">
+    	{% if page_obj.has_previous  %}	
+     		<li class="page-item">
+        		<a class="page-link paginate" href="?page={{ page_obj.previous_page_number }}">&larr; Previous Page</a>
+      		</li>
+      	{% endif %}	
+
+      	{% if page_obj.has_next %}
+      		<li class="page-item">
+        		<a class="page-link paginate" href="?page={{ page_obj.next_page_number }}">Next Page &rarr;</a>
+      		</li>
+      	{% endif %}
+    	</ul>
+    {% endif %}
+
+{% endblock %}
+
+
+
+
+{% block sidebar %}
+		{% if side_view %}
+			<div class="list-group border border-white mt-5 ml-2">
+				<input type="button" class="list-group-item button-effect" value="Recent posts">
+				{% for views in side_view %}
+					<a class="nav-link" href="{% url 'blog:detail' slug=views.slug %}">  
+					   <button type="button" class="list-group-item list-group-item-action"><img class="rounded-circle" src="{{ views.post_image }}" height="50px" width="50px"><p class="ml-1"><b>{{ views.post_title }}</b></p></button>
+					</a>
+				{% endfor %}				
+			</div>
+
+		{% endif %}
+
+
+
+{% endblock %}
+
+
+
