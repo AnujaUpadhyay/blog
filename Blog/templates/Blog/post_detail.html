@@ -23,7 +23,7 @@
 				<input type="button" class="list-group-item button-effect" value="Recent posts">
 				{% for views in side_view %}
 					<a class="nav-link" href="{% url 'blog:detail' slug=views.slug %}">  
-					   <button type="button" class="list-group-item list-group-item-action"><img class="rounded-circle" src="{{ views.post_image.url }}" height="50px" width="50px"><p class="ml-1"><b>{{ views.post_title }}</b></p></button>
+					   <button type="button" class="list-group-item list-group-item-action"><img class="rounded-circle" src="{{ views.post_image }}" height="50px" width="50px"><p class="ml-1"><b>{{ views.post_title }}</b></p></button>
 					</a>
 				{% endfor %}				
 			</div>
