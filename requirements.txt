@@ -35,7 +35,7 @@ djangocms-snippet==2.2.0
 djangocms-style==2.2.0
 djangocms-text-ckeditor==3.8.0
 djangocms-video==2.2.0
-djangorestframework==3.10.3
+djangorestframework==3.11.2
 draftjs-exporter==2.1.7
 easy-thumbnails==2.6
 gunicorn==20.0.4
