@@ -52,7 +52,7 @@ sqlparse==0.3.0
 tzlocal==2.0.0
 Unidecode==1.0.23
 urllib3==1.25.7
-wagtail==2.7
+wagtail==2.11.8
 webencodings==0.5.1
 whitenoise==4.1.4
 Willow==1.3
